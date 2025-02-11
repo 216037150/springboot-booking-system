@@ -14,7 +14,7 @@ This is an **appointment booking system** where **patients** can book appointmen
 ### Backend:
 - **Spring Boot** (Java)
 - **Spring Data JPA**
-- **PostgreSQL** (or MySQL)
+- **PostgreSQL** 
 - **Spring Boot Security (optional for authentication)**
 
 ### Frontend:
@@ -24,9 +24,8 @@ This is an **appointment booking system** where **patients** can book appointmen
 ## Installation & Setup
 
 ### Prerequisites
-- **Java 17+** (JDK)
 - **Spring Boot**
-- **PostgreSQL** (or MySQL)
+- **PostgreSQL** 
 - **Node.js** (for Angular frontend)
 
 ### Backend Setup
@@ -37,10 +36,10 @@ This is an **appointment booking system** where **patients** can book appointmen
    ```
 2. **Configure the database** in `src/main/resources/application.properties`:
    ```properties
-   spring.datasource.url=jdbc:postgresql://localhost:5432/your_db
-   spring.datasource.username=your_username
-   spring.datasource.password=your_password
-   spring.jpa.hibernate.ddl-auto=update
+   spring.datasource.url=jdbc:postgresql://localhost:5432/your_db...
+   spring.datasource.username=your_username....
+   spring.datasource.password=your_password....
+   spring.jpa.hibernate.ddl-auto=update / create
    ```
 3. **Run the Spring Boot application:**
    ```sh
@@ -77,6 +76,5 @@ This is an **appointment booking system** where **patients** can book appointmen
 - Email notifications for appointment status updates
 - Calendar integration
 
-## License
-This project is **open-source** under the **MIT License**.
+
 
