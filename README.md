@@ -19,7 +19,7 @@ This is an **appointment booking system** where **patients** can book appointmen
 
 ### Frontend:
 - **Angular** (for UI development)
-- **Bootstrap/TailwindCSS** (for styling)
+- **TailwindCSS** (for styling)
 
 ## Installation & Setup
 
