@@ -1,2 +1,6 @@
-<h1 class="text-3xl font-bold text-blue-600 text-center  w-64">Hello, Tailwind in Angular! 🎉</h1>
-<router-outlet />
+<nav class="p-4 bg-blue-500 text-white flex space-x-4">
+  <a routerLink="/" class="hover:underline">Home</a>
+  <a routerLink="/appointment" class="hover:underline">Book Appointment</a>
+</nav>
+
+<router-outlet></router-outlet>
