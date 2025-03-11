@@ -2,9 +2,14 @@ package com.booking_system.server.model;
 
 import com.booking_system.server.AppointmentStatus;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "appointments")
 public class Appointment {
 
@@ -31,46 +36,5 @@ public class Appointment {
         this.appointmentDate = appointmentDate;
         this.status = AppointmentStatus.PENDING;
     }
-
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getPatientName() {
-        return patientName;
-    }
-    public void setPatientName(String patientName) {
-        this.patientName = patientName;
-    }
-
-    public String getDoctorName() {
-        return doctorName;
-    }
-    public void setDoctorName(String doctorName) {
-        this.doctorName = doctorName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public LocalDateTime getAppointmentDate() {
-        return appointmentDate;
-    }
-    public void setAppointmentDate(LocalDateTime appointmentDate) {
-        this.appointmentDate = appointmentDate;
-    }
-
-    public AppointmentStatus getStatus() {
-        return status;
-    }
-    public void setStatus(AppointmentStatus status) {
-        this.status = status;
-    }
+    
 }

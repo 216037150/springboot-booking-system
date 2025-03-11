@@ -18,28 +18,41 @@ export class AppointmentComponent {
     patientName: '',
     doctorName: '',
     email: '',
-    appointmentDate: ''
+    appointmentDate: '',
+    appointmentTime: ''
   };
 
   message: string = '';
 
   constructor(private appointmentService: AppointmentService) {}
 
-bookAppointment() {
-  console.log('Appointment Data:', this.appointment);
-  if (this.appointment.patientName && this.appointment.doctorName && this.appointment.email && this.appointment.appointmentDate) {
-    this.appointmentService.bookAppointment(this.appointment).subscribe({
-      next: (response) => {
-        this.message = `Appointment booked with ID: ${response.id}`;
-      },
-      error: () => {
-        this.message = 'Failed to book appointment';
-      }
-    });
-  } else {
-    this.message = 'Please fill in all fields.';
+  bookAppointment() {
+    console.log('Appointment Data:', this.appointment);
+
+    if (
+      this.appointment.patientName &&
+      this.appointment.doctorName &&
+      this.appointment.email &&
+      this.appointment.appointmentDate &&
+      this.appointment.appointmentTime
+    ) {
+      const fullDateTime = `${this.appointment.appointmentDate}T${this.appointment.appointmentTime}:00`;
+
+      const appointmentData = {
+        ...this.appointment,
+        appointmentDate: fullDateTime,
+      };
+
+      this.appointmentService.bookAppointment(appointmentData).subscribe({
+        next: (response) => {
+          this.message = `Appointment booked with ID: ${response.id}`;
+        },
+        error: () => {
+          this.message = 'Failed to book appointment';
+        }
+      });
+    } else {
+      this.message = 'Please fill in all fields.';
+    }
   }
-}
-
-
 }
